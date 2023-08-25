@@ -58,7 +58,7 @@ const handleLogin = () => {
               onChangeText={text => setPassword(text)}
               value={password}
             />
-             <Link href='/pages/homes' >Login
+             <Link href='/pages/homes' >Loginnn
             <TouchableOpacity  onPress={handleLogin} style={styles.button} > 
             
                {/* <Text style={styles.buttonText}>Login</Text> */}
