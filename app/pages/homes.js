@@ -1,7 +1,6 @@
 import { View, Text, StatusBar,Image, SafeAreaView, StyleSheet} from 'react-native'
 import React from 'react'
 import {Stack} from 'expo-router';
-// import styles from '../index.style';
 import Profile from './profile';
 const user = {
   username: 'Uma',
