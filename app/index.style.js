@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 import { exp } from "react-native-reanimated";
 
+
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -51,7 +53,11 @@ const styles = StyleSheet.create({
     buttonText: {
       color: 'white',
       fontSize: 16,
+  
     },
+    box:{
+     
+    }
   });
 
 export default styles;

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { View, ImageBackground, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Platform, StatusBar } from 'react-native';
+import { View, ImageBackground, Text,TextInput, TouchableOpacity, KeyboardAvoidingView, ScrollView, Platform, StatusBar } from 'react-native';
 import styles from './index.style'
+import { Link } from 'expo-router';
+
+
 
 const LoginPage = () => {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,13 +19,13 @@ const credentials = [
 const handleLogin = () => {
     const matchedCredential = credentials.find(cred => cred.username === username && cred.password === password);
     if (matchedCredential) {
-     
       console.log('Login successful!');
       alert('Login successful!');
+
     } else {
-     
-      console.log('Login failed. Please check your credentials.');
+      console.log('Login failed. Please check your credentials.')
       alert('Login failed. Please check your credentials.');
+
     }
   };
 
@@ -29,10 +33,11 @@ const handleLogin = () => {
   return (
       <KeyboardAvoidingView
         style={styles.container}
-        behavior={Platform.OS === 'ios' ? 'padding' : null}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
       >
       <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <StatusBar barStyle="light-content" backgroundColor={"#000"} />
+      
         <ImageBackground
           source={require('../assets/experts.jpg')} 
           style={styles.imageBackground}
@@ -53,9 +58,14 @@ const handleLogin = () => {
               onChangeText={text => setPassword(text)}
               value={password}
             />
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>Login</Text>
+             <Link href='/pages/homes' >Login
+            <TouchableOpacity  onPress={handleLogin} style={styles.button} > 
+            
+               {/* <Text style={styles.buttonText}>Login</Text> */}
+              
             </TouchableOpacity>
+            </Link>
+      
           </View>
         </ImageBackground>
       </ScrollView>
@@ -63,6 +73,7 @@ const handleLogin = () => {
   );
 };
 
-
-
 export default LoginPage;
+
+
+
